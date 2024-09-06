@@ -149,3 +149,24 @@ button:hover {
 .dark-mode .theme-toggle i.fa-moon {
   color: #fff;
 }
+
+.font-controls {
+  margin: 0;
+  /* text-align: justify; */
+}
+
+.font-controls button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: color 0.3s;
+  margin: 0;
+  width: 20px;
+}
+
+.font-controls button:hover {
+  color: #0056b3;
+}
+.dark-mode .font-controls button {
+  background-color: #555;
+}

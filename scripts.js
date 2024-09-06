@@ -98,6 +98,8 @@ const prevBtn = document.getElementById("prev-btn");
 const nextBtn = document.getElementById("next-btn");
 const randomBtn = document.getElementById("random-btn");
 const themeToggleIcon = document.getElementById("theme-toggle-icon");
+const increaseFontBtn = document.getElementById("increase-font");
+const decreaseFontBtn = document.getElementById("decrease-font");
 
 function displayQuote(index) {
   const filteredQuotes = quotes.filter(
@@ -128,6 +130,20 @@ categorySelect.addEventListener("change", (e) => {
   currentCategory = e.target.value;
   currentQuoteIndex = 0;
   displayQuote(currentQuoteIndex);
+});
+
+increaseFontBtn.addEventListener("click", () => {
+  const currentFontSize = parseFloat(
+    window.getComputedStyle(quoteText, null).getPropertyValue("font-size")
+  );
+  quoteText.style.fontSize = currentFontSize + 2 + "px";
+});
+
+decreaseFontBtn.addEventListener("click", () => {
+  const currentFontSize = parseFloat(
+    window.getComputedStyle(quoteText, null).getPropertyValue("font-size")
+  );
+  quoteText.style.fontSize = currentFontSize - 2 + "px";
 });
 
 prevBtn.addEventListener("click", () => updateQuoteIndex(-1));
