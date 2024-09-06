@@ -16,6 +16,7 @@ body {
   background-color: #ffffff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 #quote-box {
@@ -25,12 +26,14 @@ body {
   border-radius: 5px;
   background-color: #f9f9f9;
 }
+
 select#category-select {
   font-size: 18px;
   padding: 10px 15px;
   border: 2px solid #0056b3;
   border-radius: 5px;
   cursor: pointer;
+  transition: border-color 0.3s;
 }
 
 select#category-select:focus {
@@ -57,6 +60,92 @@ button {
 button:hover {
   background-color: #bfb9b9;
 }
+
 .buttons {
   padding: 0 10px 15px 10px;
+}
+
+/* Light mode */
+.light-mode {
+  background-color: #fff;
+  color: #000;
+}
+
+.light-mode .container {
+  background-color: #ffffff;
+}
+
+.light-mode #quote-box {
+  background-color: #f9f9f9;
+  border-color: #0056b3;
+}
+
+.light-mode button {
+  background-color: #f0f0f0;
+  color: #000;
+}
+
+.light-mode button:hover {
+  background-color: #d0d0d0;
+}
+
+/* Dark mode */
+.dark-mode {
+  background-color: #333;
+  color: #fff;
+}
+
+.dark-mode .container {
+  background-color: #444;
+  color: #fff;
+}
+
+.dark-mode #category-select {
+  background-color: #555;
+  border-color: #aaa;
+  color: #fff;
+}
+
+.dark-mode #quote-box {
+  background-color: #555;
+  border-color: #aaa;
+}
+
+.dark-mode button {
+  background-color: #555;
+  color: #fff;
+}
+
+.dark-mode button:hover {
+  background-color: #777;
+}
+
+/* Theme toggle */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.theme-toggle i {
+  transition: color 0.3s;
+}
+
+.theme-toggle i.fa-sun {
+  color: #ffd700;
+}
+
+.theme-toggle i.fa-moon {
+  color: #aaa;
+}
+
+.dark-mode .theme-toggle i.fa-sun {
+  color: #ffd700;
+}
+
+.dark-mode .theme-toggle i.fa-moon {
+  color: #fff;
 }

@@ -97,6 +97,7 @@ const categorySelect = document.getElementById("category-select");
 const prevBtn = document.getElementById("prev-btn");
 const nextBtn = document.getElementById("next-btn");
 const randomBtn = document.getElementById("random-btn");
+const themeToggleIcon = document.getElementById("theme-toggle-icon");
 
 function displayQuote(index) {
   const filteredQuotes = quotes.filter(
@@ -133,6 +134,22 @@ prevBtn.addEventListener("click", () => updateQuoteIndex(-1));
 nextBtn.addEventListener("click", () => updateQuoteIndex(1));
 randomBtn.addEventListener("click", displayRandomQuote);
 
+themeToggleIcon.addEventListener("click", () => {
+  const isDarkMode = document.body.classList.contains("dark-mode");
+  if (isDarkMode) {
+    document.body.classList.remove("dark-mode");
+    document.body.classList.add("light-mode");
+    themeToggleIcon.classList.replace("fa-moon", "fa-sun");
+  } else {
+    document.body.classList.remove("light-mode");
+    document.body.classList.add("dark-mode");
+    themeToggleIcon.classList.replace("fa-sun", "fa-moon");
+  }
+});
+
 window.onload = () => {
   displayQuote(currentQuoteIndex);
+  const isDarkMode = document.body.classList.contains("dark-mode");
+  themeToggleIcon.classList.toggle("fa-sun", isDarkMode);
+  themeToggleIcon.classList.toggle("fa-moon", !isDarkMode);
 };
