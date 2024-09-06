@@ -166,6 +166,7 @@ button:hover {
 
 .font-controls button:hover {
   color: #0056b3;
+  background: none;
 }
 .dark-mode .font-controls button {
   background-color: #555;
