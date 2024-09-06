@@ -37,3 +37,26 @@ select#category-select:focus {
   outline: none;
   border-color: #003f7f;
 }
+
+.controls,
+.font-controls,
+.theme-toggle {
+  margin: 10px 0;
+}
+
+button {
+  margin: 0 5px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 80px;
+}
+
+button:hover {
+  background-color: #bfb9b9;
+}
+.buttons {
+  padding: 0 10px 15px 10px;
+}

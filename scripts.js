@@ -94,6 +94,9 @@ let currentCategory = "all";
 
 const quoteText = document.getElementById("quote-text");
 const categorySelect = document.getElementById("category-select");
+const prevBtn = document.getElementById("prev-btn");
+const nextBtn = document.getElementById("next-btn");
+const randomBtn = document.getElementById("random-btn");
 
 function displayQuote(index) {
   const filteredQuotes = quotes.filter(
@@ -112,11 +115,23 @@ function updateQuoteIndex(increment) {
   displayQuote(currentQuoteIndex);
 }
 
+function displayRandomQuote() {
+  const filteredQuotes = quotes.filter(
+    (q) => currentCategory === "all" || q.category === currentCategory
+  );
+  currentQuoteIndex = Math.floor(Math.random() * filteredQuotes.length);
+  displayQuote(currentQuoteIndex);
+}
+
 categorySelect.addEventListener("change", (e) => {
   currentCategory = e.target.value;
   currentQuoteIndex = 0;
   displayQuote(currentQuoteIndex);
 });
+
+prevBtn.addEventListener("click", () => updateQuoteIndex(-1));
+nextBtn.addEventListener("click", () => updateQuoteIndex(1));
+randomBtn.addEventListener("click", displayRandomQuote);
 
 window.onload = () => {
   displayQuote(currentQuoteIndex);
